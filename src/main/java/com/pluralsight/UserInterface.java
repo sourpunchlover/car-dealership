@@ -37,31 +37,31 @@ public class UserInterface {
 
             switch (userOption) {
                 case "1":
-                    //processGetByPriceRequest();
+                    processGetByPriceRequest();
                     break;
                 case "2":
-                    //processGetByMakeModelRequest();
+                    processGetByMakeModelRequest();
                     break;
                 case "3":
-                    //processGetByYearRequest();
+                    processGetByYearRequest();
                     break;
                 case "4":
-                    //processGetByColorRequest();
+                    processGetByColorRequest();
                     break;
                 case "5":
-                    //processGetByMileageRequest();
+                    processGetByMileageRequest();
                     break;
                 case "6":
-                    //processGetByVehicleTypeRequest();
+                    processGetByVehicleTypeRequest();
                     break;
                 case "7":
-                    //processGetAllVehiclesRequest();
+                    processGetAllVehiclesRequest();
                     break;
                 case "8":
-                    //processAddVehicleRequest();
+                    processAddVehicleRequest();
                     break;
                 case "9":
-                    //processRemoveVehicleRequest();
+                    processRemoveVehicleRequest();
                     break;
                 case "99":
                     //Quit
@@ -76,6 +76,33 @@ public class UserInterface {
 
         }//closing curly for while
 
+    }
+
+    public void processGetByPriceRequest() {
+    }
+
+    public void processGetByMakeModelRequest() {
+    }
+
+    public void processGetByYearRequest() {
+    }
+
+    public void processGetByColorRequest() {
+    }
+
+    public void processGetByMileageRequest() {
+    }
+
+    public void processGetByVehicleTypeRequest() {
+    }
+
+    public void processGetAllVehiclesRequest() {
+
+    }
+    public void processAddVehicleRequest() {
+    }
+
+    public void processRemoveVehicleRequest() {
     }
 
     private void displayVehicles(List<Vehicle> vehicles) {
