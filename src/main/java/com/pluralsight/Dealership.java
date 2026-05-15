@@ -13,11 +13,23 @@ public class Dealership {
         this.inventory = new ArrayList<Vehicle>();
     }
 
-        public ArrayList<Vehicle> getVehiclesByMakeModel ( int make, int model){
-            return null;
+        public ArrayList<Vehicle> getVehiclesByMakeModel ( String make, String model) {
+            ArrayList<Vehicle> result = new ArrayList<>();
+            for (Vehicle v : inventory) {
+                if (v.getMake().equalsIgnoreCase(make) && v.getModel().equalsIgnoreCase(model)) {
+                    result.add(v);
+                }
+            }
+            return result;
         }
-        public ArrayList<Vehicle> getVehiclesByPrice ( int min, int max){
-            return null;
+        public ArrayList<Vehicle> getVehiclesByPrice ( double min, double max){
+            ArrayList<Vehicle> result = new ArrayList<>();
+            for (Vehicle v : inventory) {
+                if (v.getPrice() >= min && v.getPrice() <= max) {
+                    result.add(v);
+                }
+            }
+            return result;
         }
         public ArrayList<Vehicle> getVehiclesByYear ( int min, int max){
             return null;

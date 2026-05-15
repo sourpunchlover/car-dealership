@@ -77,14 +77,40 @@ public class UserInterface {
         }//closing curly for while
 
     }
-
+    //Process methods
     public void processGetByPriceRequest() {
+        System.out.println("Enter min price of vehicle: ");
+        double min = scanner.nextDouble();
+        scanner.nextLine();
+
+        System.out.println("Enter max price of vehicle: ");
+        double max = scanner.nextDouble();
+        scanner.nextLine();
+
+        List<Vehicle> vehicles = dealership.getVehiclesByPrice(min, max);
+        displayVehicles(vehicles);
     }
 
     public void processGetByMakeModelRequest() {
+        System.out.println("Enter vehicle make: ");
+        String make = scanner.nextLine();
+        System.out.println("Enter vehicle model: ");
+        String model = scanner.nextLine();
+        List<Vehicle> vehicles = dealership.getVehiclesByMakeModel(make, model);
+        displayVehicles(vehicles);
     }
 
     public void processGetByYearRequest() {
+        System.out.println("Enter min vehicle year: ");
+        int minYear = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Enter max vehicle year: ");
+        int maxYear = scanner.nextInt();
+        scanner.nextLine();
+
+        List<Vehicle> vehicles = dealership.getVehiclesByYear(minYear, maxYear);
+        displayVehicles(vehicles);
     }
 
     public void processGetByColorRequest() {
@@ -97,7 +123,8 @@ public class UserInterface {
     }
 
     public void processGetAllVehiclesRequest() {
-
+        List<Vehicle> vehicles = dealership.getAllVehicles();
+        displayVehicles(vehicles);
     }
     public void processAddVehicleRequest() {
     }
@@ -107,14 +134,13 @@ public class UserInterface {
 
     private void displayVehicles(List<Vehicle> vehicles) {
         for (Vehicle v : vehicles) {
-            System.out.printf("Vin: %d | Year: %d | Odometer: %d | Make: %s | Model: %s | Color: %s | VehicleType: %s | Price: %.2fn", v.getVin(), v.getYear(), v.getOdometer(), v.getMake(), v.getModel(), v.getColor(), v.getVehicleType(), v.getPrice());
+            System.out.printf("Vin: %d | Year: %d | Odometer: %d | Make: %s | Model: %s | Color: %s | VehicleType: %s | Price: %.2f%n", v.getVin(), v.getYear(), v.getOdometer(), v.getMake(), v.getModel(), v.getColor(), v.getVehicleType(), v.getPrice());
         }
 
     }
 
     public void processAllVehiclesRequest() {
-        List<Vehicle> vehicles = dealership.getAllVehicles();
-        displayVehicles(vehicles);
+
     }
 
 }

@@ -16,7 +16,7 @@ public class DealershipFileManager {
             buffReader.readLine();
 
             String vehichleData;
-            buffReader.readLine();
+
             while((vehichleData = buffReader.readLine()) != null) {
                 String[] splitVehicles = vehichleData.split(Pattern.quote("|"));
 
