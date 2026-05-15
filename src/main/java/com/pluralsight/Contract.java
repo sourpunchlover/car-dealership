@@ -3,11 +3,11 @@ package com.pluralsight;
 public abstract class Contract {
     protected String dateOfContract, customerName, customerEmail;
     protected double totalPrice, monthlyPayment;
-    protected  boolean vehicleSold;//might have to change this & update getter & setter later
+    protected Vehicle vehicleSold;//might have to change this & update getter & setter later
 
     //constructor, all fields except total
     //price and monthly payment
-    public Contract(String dateOfContract, String customerName, String customerEmail, boolean vehicleSold) {
+    public Contract(String dateOfContract, String customerName, String customerEmail, Vehicle vehicleSold) {
         this.dateOfContract = dateOfContract;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
@@ -40,12 +40,8 @@ public abstract class Contract {
         this.customerEmail = customerEmail;
     }
 
-    public boolean isVehicleSold() {
+    public Vehicle getVehicleSold() {
         return vehicleSold;
-    }
-
-    public void setVehicleSold(boolean vehicleSold) {
-        this.vehicleSold = vehicleSold;
     }
 
     public abstract double getTotalPrice();
